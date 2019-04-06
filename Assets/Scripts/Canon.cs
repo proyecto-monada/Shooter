@@ -38,7 +38,7 @@ public class Canon : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        canon = transform.position;
+        canon = giro.v3;
         canon0 = canon;
     }
 
@@ -62,5 +62,6 @@ public class Canon : MonoBehaviour
 
         //La orientacion del canon es el producto de la orient inicial canon0 por la matriz de rotacion
         canon.Set( Vector3.Dot(Mat1, canon0), Vector3.Dot(Mat2, canon0), Vector3.Dot(Mat3, canon0) );
+        canon.Normalize();
     }
 }
