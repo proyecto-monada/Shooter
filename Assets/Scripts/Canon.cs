@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Canon : MonoBehaviour
 {
-    public Vector3 canon;
+    public static Vector3 canon;
     public Vector3 canon0;
     public Vector3 Mat1;
     public Vector3 Mat2;
