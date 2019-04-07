@@ -12,7 +12,7 @@ public class Disparos : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Offset.Set(4, 4, 4);
+        Offset.Set(0.1f, 0.1f, 0.1f);
         VectorPistola = transform.position - GameObject.Find("Arma").transform.position;
     }
 
