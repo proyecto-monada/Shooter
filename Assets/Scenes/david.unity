@@ -269,7 +269,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 70337913}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalPosition: {x: 0, y: -1, z: -5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -292,7 +292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4846736819855508, guid: 0584839bceadb844fa31b1ca352056ba, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.005
       objectReference: {fileID: 0}
     - target: {fileID: 4846736819855508, guid: 0584839bceadb844fa31b1ca352056ba, type: 3}
       propertyPath: m_LocalPosition.z
@@ -361,7 +361,7 @@ CharacterJoint:
     spring: 0
     damper: 0
   m_LowTwistLimit:
-    limit: -80
+    limit: -124.079834
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
@@ -414,10 +414,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.1181655
-  m_Height: 0.472662
+  m_Radius: 0.07
+  m_Height: 0.5
   m_Direction: 0
-  m_Center: {x: -0.236331, y: 0, z: 0}
+  m_Center: {x: -0.25, y: -0.03, z: 0}
 --- !u!1 &103355671 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1063359577383002, guid: 0584839bceadb844fa31b1ca352056ba,
@@ -458,7 +458,7 @@ CharacterJoint:
     spring: 0
     damper: 0
   m_LowTwistLimit:
-    limit: -20
+    limit: -61.429108
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
@@ -469,11 +469,11 @@ CharacterJoint:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 30
+    limit: 31.334194
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 0
+    limit: 15.407016
     bounciness: 0
     contactDistance: 0
   m_EnableProjection: 0
@@ -495,10 +495,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.120175295
+  m_Radius: 0.1
   m_Height: 0.4005843
   m_Direction: 0
-  m_Center: {x: -0.20029216, y: 0, z: 0}
+  m_Center: {x: -0.2, y: 0, z: 0}
 --- !u!1 &483347279 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1093936216438906, guid: 0584839bceadb844fa31b1ca352056ba,
@@ -523,7 +523,7 @@ CharacterJoint:
     spring: 0
     damper: 0
   m_LowTwistLimit:
-    limit: -80
+    limit: -112.704834
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
@@ -534,11 +534,11 @@ CharacterJoint:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 0
+    limit: 14.012417
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 0
+    limit: 3
     bounciness: 0
     contactDistance: 0
   m_EnableProjection: 0
@@ -576,10 +576,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.11816545
-  m_Height: 0.4726618
+  m_Radius: 0.07
+  m_Height: 0.5
   m_Direction: 0
-  m_Center: {x: -0.2363309, y: 0, z: 0}
+  m_Center: {x: -0.25, y: -0.03, z: 0}
 --- !u!1 &625281705 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1823465484809292, guid: 0584839bceadb844fa31b1ca352056ba,
@@ -694,8 +694,21 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.35640097, y: 0.28833982, z: 0.35427076}
-  m_Center: {x: -0.17820036, y: -0.03639242, z: 0.0000009685755}
+  m_Size: {x: 0.2, y: 0.2, z: 0.3}
+  m_Center: {x: -0.12, y: -0.01, z: 0.0000009685755}
+--- !u!65 &847720815
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 847720811}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.12, y: 0.2, z: 0.26}
+  m_Center: {x: -0.285, y: -0.01, z: 0}
 --- !u!1 &1296932574 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1036958502221856, guid: 0584839bceadb844fa31b1ca352056ba,
@@ -1173,13 +1186,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1928661554}
-  m_LocalRotation: {x: 0.043764725, y: 0.03448809, z: -0.09849047, w: 0.9935768}
-  m_LocalPosition: {x: 0.04578753, y: -0.78, z: -0.06587505}
-  m_LocalScale: {x: 2, y: 0.5, z: 2}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: -2.01, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 3
-  m_LocalEulerAnglesHint: {x: 5.38, y: 3.45, z: -11.16}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1991405858 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1105701325033784, guid: 0584839bceadb844fa31b1ca352056ba,
@@ -1258,8 +1271,8 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 0.22114582, y: 0.29043, z: 0.35427076}
-  m_Center: {x: -0.11057285, y: 0.010716945, z: 0.000000059604645}
+  m_Size: {x: 0.21, y: 0.25, z: 0.32}
+  m_Center: {x: -0.11057285, y: 0.01, z: 0.000000059604645}
 --- !u!1 &2099749275 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1711214879339740, guid: 0584839bceadb844fa31b1ca352056ba,
@@ -1300,7 +1313,7 @@ CharacterJoint:
     spring: 0
     damper: 0
   m_LowTwistLimit:
-    limit: -20
+    limit: -49.57171
     bounciness: 0
     contactDistance: 0
   m_HighTwistLimit:
@@ -1311,11 +1324,11 @@ CharacterJoint:
     spring: 0
     damper: 0
   m_Swing1Limit:
-    limit: 30
+    limit: 37.23138
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 0
+    limit: 25.2302
     bounciness: 0
     contactDistance: 0
   m_EnableProjection: 0
@@ -1337,10 +1350,10 @@ CapsuleCollider:
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.12017533
+  m_Radius: 0.1
   m_Height: 0.40058443
   m_Direction: 0
-  m_Center: {x: -0.20029221, y: 0, z: 0}
+  m_Center: {x: -0.2, y: 0, z: 0}
 --- !u!1 &2108900868 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 1490804052102734, guid: 0584839bceadb844fa31b1ca352056ba,
@@ -1394,7 +1407,7 @@ CharacterJoint:
     bounciness: 0
     contactDistance: 0
   m_Swing2Limit:
-    limit: 0
+    limit: 12.914618
     bounciness: 0
     contactDistance: 0
   m_EnableProjection: 0
