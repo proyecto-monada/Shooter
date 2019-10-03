@@ -19,12 +19,12 @@ public class Generacion : MonoBehaviour
 	{
 		while(enemyCount < 100)
 		{
-			xPos = -8;
-			zPos = Random.Range(-5,0);
+			xPos = 0;
+			zPos = Random.Range(0,5);
 			timeGenerator = Random.Range(1,4);
 
 		//	Instantiate(theEnemy, new Vector3(xPos, 0, zPos), Quaternion.identity);
-			Instantiate(theEnemy, new Vector3(xPos, 0, zPos), Quaternion.Euler(0,90,0));
+			Instantiate(theEnemy, new Vector3(xPos, 6, zPos), Quaternion.Euler(0,90,0));
 			yield return new WaitForSeconds(timeGenerator);
 			enemyCount += 1;
 		}
