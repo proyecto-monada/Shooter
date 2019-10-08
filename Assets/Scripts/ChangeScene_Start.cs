@@ -12,7 +12,7 @@ public class ChangeScene_Start : MonoBehaviour
 
     public void OnMouseClick()
     {
-        Application.LoadLevel("01-  Single Line TextMesh Pro");
+        Application.LoadLevel("Escenario");
     }
 
     // Update is called once per frame
