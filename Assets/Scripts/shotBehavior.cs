@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class shotBehavior : MonoBehaviour
-{
+{		//este script se aplica a objetos disparables
+		//esta basicamente copiado de un asset de github
 
     public Vector3 m_target;
     public GameObject collisionExplosion;
@@ -33,6 +34,7 @@ public class shotBehavior : MonoBehaviour
         m_target = target;
     }
 
+//aun no se usa la explosion
     void explode()
     {
         if (collisionExplosion  != null) {

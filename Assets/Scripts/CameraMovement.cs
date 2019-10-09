@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class CameraMovement : MonoBehaviour
-{
+{		//movimiento de camara para hacer una especie de fps
 
 public float speedH = 2f;
 public float speedV = 2f;

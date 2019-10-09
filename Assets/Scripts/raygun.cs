@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class raygun : MonoBehaviour
-{
+{		//detecta que con rayo puede haber colision con algo, si es el zombie activa la muerte
+		//!!se crea un objeto vacio en la punta del arma!!
     public float shootRate;
     private float m_shootRateTimeStamp;
 
