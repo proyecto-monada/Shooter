@@ -694,6 +694,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ControlAnimacion: {fileID: 1049315000}
+  tiempo: 10
 --- !u!1 &1288596612
 GameObject:
   m_ObjectHideFlags: 0
