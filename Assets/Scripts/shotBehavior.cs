@@ -41,7 +41,6 @@ public class shotBehavior : MonoBehaviour
     {
 
         if (collisionExplosion  != null) {
-			Puntuacion.score += 100;
             GameObject explosion = (GameObject)Instantiate(
                 collisionExplosion, transform.position, transform.rotation);
 			

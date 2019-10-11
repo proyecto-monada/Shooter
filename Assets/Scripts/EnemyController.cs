@@ -19,7 +19,7 @@ public class EnemyController : MonoBehaviour
         
     }
 
-//funcion muerte: cambia collider y rigid body y desactiva el animador, probocando el ragdoll
+//funcion muerte: cambia collider y rigid body y desactiva el animador, provocando el ragdoll
 	//destrulle el objeto despues de 5s
 	public void die()
    	 {
@@ -27,7 +27,7 @@ public class EnemyController : MonoBehaviour
    	     GetComponent<Animator>().enabled = false;
    	     setRigidbodyState(false);
     	    setColliderState(true);
-
+		Puntuacion.score += 100;
   	      if (gameObject != null)
   	      {
    	         Destroy(gameObject, 5f);
@@ -38,7 +38,8 @@ public class EnemyController : MonoBehaviour
 	void setRigidbodyState(bool state)
   	  {
 
-   	     Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
+		
+		 Rigidbody[] rigidbodies = GetComponentsInChildren<Rigidbody>();
 
    	     foreach (Rigidbody rigidbody in rigidbodies)
   	      {
