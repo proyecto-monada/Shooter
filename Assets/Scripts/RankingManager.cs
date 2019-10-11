@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
+/*
+
 public class RankingManager : MonoBehaviour
 {
     public struct Ranked {
@@ -28,3 +30,4 @@ public class RankingManager : MonoBehaviour
     } 
 
 }
+*/
