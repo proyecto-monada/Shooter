@@ -30,7 +30,7 @@ public class EnemyController : MonoBehaviour
 		Puntuacion.score += 100;
   	      if (gameObject != null)
   	      {
-   	         Destroy(gameObject, 5f);
+   	         Destroy(gameObject, 2f);
    	     }
 
  	   }
