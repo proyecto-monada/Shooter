@@ -1,9 +1,44 @@
 fileFormatVersion: 2
-guid: af7b38f717df61142b6d301d9e3861a1
+guid: 96b5fd09f3c955f45a48562d3a62af3c
 ModelImporter:
   serializedVersion: 23
   fileIDToRecycleName:
-    2186277476908879412: ImportLogs
+    100000: Camera
+    100002: Cube
+    100004: Cube.001
+    100006: Cylinder
+    100008: Cylinder.001
+    100010: Cylinder.002
+    100012: Light
+    100014: //RootNode
+    400000: Camera
+    400002: Cube
+    400004: Cube.001
+    400006: Cylinder
+    400008: Cylinder.001
+    400010: Cylinder.002
+    400012: Light
+    400014: //RootNode
+    2000000: Camera
+    2100000: Material.002
+    2100002: Material.001
+    2100004: Material.004
+    2300000: Cube
+    2300002: Cube.001
+    2300004: Cylinder
+    2300006: Cylinder.001
+    2300008: Cylinder.002
+    3300000: Cube
+    3300002: Cube.001
+    3300004: Cylinder
+    3300006: Cylinder.001
+    3300008: Cylinder.002
+    4300000: Cube
+    4300002: Cylinder
+    4300004: Cylinder.001
+    4300006: Cube.001
+    4300008: Cylinder.002
+    10800000: Light
   externalObjects: {}
   materials:
     importMaterials: 1
@@ -41,8 +76,8 @@ ModelImporter:
     useSRGBMaterialColor: 1
     importVisibility: 1
     importBlendShapes: 1
-    importCameras: 1
-    importLights: 1
+    importCameras: 0
+    importLights: 0
     swapUVChannels: 0
     generateSecondaryUV: 0
     useFileUnits: 1
@@ -84,7 +119,7 @@ ModelImporter:
     hasExtraRoot: 0
     skeletonHasParents: 1
   lastHumanDescriptionAvatarSource: {instanceID: 0}
-  animationType: 2
+  animationType: 0
   humanoidOversampling: 1
   additionalBone: 0
   userData: 
