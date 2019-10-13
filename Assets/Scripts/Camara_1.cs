@@ -5,7 +5,7 @@ public class Camara_1 : MonoBehaviour
 {  
     public float sensibilidad = 6.0f;
 
-    private Transform PlayerBody;
+    [SerializeField] private Transform PlayerBody;
     private float posicion;
    
 
