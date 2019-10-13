@@ -2,8 +2,7 @@
 using UnityEngine;
 
 public class Camara_1 : MonoBehaviour
-{
-    public GameObject player;    
+{  
     public float sensibilidad = 6.0f;
 
     private Transform PlayerBody;
