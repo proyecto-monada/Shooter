@@ -19,5 +19,5 @@ void loop() {
     msg2 = 1000;
   }
     
-  delay(50);
+  delay(10);
 }
