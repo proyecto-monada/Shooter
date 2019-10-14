@@ -6,8 +6,7 @@ public class PlayerMovement : MonoBehaviour
     CharacterController characterController;
     public float velocidad = 6.0f;
     public float salto = 8.0f;
-
-
+    
     [SerializeField] private AnimationCurve Caida;
     [SerializeField] private KeyCode jumpkey;
 

@@ -32,7 +32,6 @@ public class Camara_1 : MonoBehaviour
     void Update()
     {
        
-
         float giroY = Input.GetAxis("Mouse X") * sensibilidad * Time.deltaTime;
         float giroX = Input.GetAxis("Mouse Y") * sensibilidad * Time.deltaTime;
         posicion += giroX;
