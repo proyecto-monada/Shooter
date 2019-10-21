@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using UnityEngine;
-
+/*
 public class FileManager : MonoBehaviour
 {
     //Struct array for keeping the winners
@@ -32,4 +32,4 @@ public class FileManager : MonoBehaviour
 		while(Rank[i].r_score);
 	}
 	
-}
+}*/

@@ -1,7 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-
+/*
 public class Control : MonoBehaviour
 {
 	[SerializeField] private Animator ControlAnimacion;
@@ -19,3 +19,4 @@ public class Control : MonoBehaviour
 	}
 	
 }
+*/
