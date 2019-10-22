@@ -1,11 +1,4 @@
-<<<<<<< HEAD
-=======
-/*<<<<<<< HEAD
-=======
-<<<<<<< HEAD
->>>>>>> fe7221612b3742f41510e876eeb0fc54f46f7f78
-*/
->>>>>>> a65dd8b082a8ed31179da91d2b308892685da4bc
+
 ﻿using UnityEngine;
 using System;
 using System.IO.Ports; //incluimos el namespace Sustem.IO.Ports
@@ -18,6 +11,7 @@ public class ComArduino : MonoBehaviour
     public string[] vec_valor;
     public float dato1;
     public float dato2;
+    public string control;
     SerialPort serialPort = new SerialPort("COM5", 9600); //Inicializamos el puerto serie
 
     void Start()
@@ -38,8 +32,16 @@ public class ComArduino : MonoBehaviour
                 print(valor); //printeamos la linea leida para verificar que leemos el dato que manda nuestro Arduino
                 vec_valor = valor.Split(','); //Separamos el String leido valiendonos 
                                               //de las comas y almacenamos los valores en un array.
-                dato1 = float.Parse(vec_valor[0]);
-                dato2 = float.Parse(vec_valor[1]);
+
+                control = vec_valor[0];
+                if (control.Equals("#"))
+                {
+                    dato1 = float.Parse(vec_valor[1]);
+                    dato2 = float.Parse(vec_valor[2]);
+                }
+                    
+               
+               
             }
 
             catch
@@ -51,60 +53,4 @@ public class ComArduino : MonoBehaviour
 
     }
 
-<<<<<<< HEAD
 }
-=======
-/*
-<<<<<<< HEAD
-=======
-=======
-﻿using UnityEngine;
-using System;
-using System.IO.Ports; //incluimos el namespace Sustem.IO.Ports
-
-
-public class ComArduino : MonoBehaviour
-{
-
-    public string valor;
-    public string[] vec_valor;
-    public float dato1;
-    public float dato2;
-    SerialPort serialPort = new SerialPort("COM5", 9600); //Inicializamos el puerto serie
-
-    void Start()
-    {
-
-        serialPort.Open(); //Abrimos una nueva conexión de puerto serie
-        serialPort.ReadTimeout = 1; //Establecemos el tiempo de espera cuando una operación de lectura no finaliza
-    }
-
-    void Update()
-    {
-        if (serialPort.IsOpen) //comprobamos que el puerto esta abierto
-        {
-            try //utilizamos el bloque try/catch para detectar una posible excepción.
-            {
-
-                valor = serialPort.ReadLine(); //leemos una linea del puerto serie y la almacenamos en un string
-                print(valor); //printeamos la linea leida para verificar que leemos el dato que manda nuestro Arduino
-                vec_valor = valor.Split(','); //Separamos el String leido valiendonos 
-                                              //de las comas y almacenamos los valores en un array.
-                dato1 = float.Parse(vec_valor[0]);
-                dato2 = float.Parse(vec_valor[1]);
-            }
-
-            catch
-            {
-
-            }
-
-        }
-
-    }
-
->>>>>>> cf512e1bcec256c971526caf826a03282bb7499f
->>>>>>> fe7221612b3742f41510e876eeb0fc54f46f7f78
-*/
-}
->>>>>>> a65dd8b082a8ed31179da91d2b308892685da4bc
