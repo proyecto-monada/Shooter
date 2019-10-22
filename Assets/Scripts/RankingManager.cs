@@ -7,6 +7,7 @@ using UnityEngine;
 
 public class RankingManager : MonoBehaviour
 {
+<<<<<<< HEAD
     public struct Ranked {
 		char[] r_name;
 		unsigned int r_num;
@@ -29,5 +30,14 @@ public class RankingManager : MonoBehaviour
 		}
     } 
 
+=======
+	// Start is called before the first frame update
+    void Start()
+    {
+		readRanking();
+	}
+
+	
+>>>>>>> a65dd8b082a8ed31179da91d2b308892685da4bc
 }
 */
