@@ -5,6 +5,7 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {		//este scrip se le añade al enemigo en cuestion
     
+	
     void Start()
     {//desactivamos los collider y activamos el animador
 
@@ -26,8 +27,14 @@ public class EnemyController : MonoBehaviour
 
    	     GetComponent<Animator>().enabled = false;
    	     setRigidbodyState(false);
-    	    setColliderState(true);
-		Puntuacion.score += 100;
+    	    setColliderState(true);	
+			
+
+			
+		Puntuacion.score += (100+Puntuacion.extra)*Puntuacion.combo;	
+		Puntuacion.combo ++;
+		//Falta tener en cuenta la velocidad del zombie 
+		
   	      if (gameObject != null)
   	      {
    	         Destroy(gameObject, 5f);

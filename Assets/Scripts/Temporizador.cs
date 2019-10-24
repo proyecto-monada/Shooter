@@ -11,8 +11,10 @@ public class Temporizador : MonoBehaviour
 	
 	public void Update() 
 	{
+		if (tiempo>0){
 		tiempo -= Time.deltaTime; 
 		contador.text = "" + tiempo.ToString("f0");	
+		}
 	}
 	
 

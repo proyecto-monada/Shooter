@@ -10,7 +10,7 @@ public class Control : MonoBehaviour
 	public void Update() 
 	{
 		tiempo -= Time.deltaTime; 
-		if(tiempo < 6.0){
+		if(tiempo < 6.0 && tiempo > 0){
 			ControlAnimacion.SetBool("Activar", true);
 		}else{
 			ControlAnimacion.SetBool("Activar", false);
