@@ -38,6 +38,9 @@ public class Generacion : MonoBehaviour
 
 			//crea el enemigo(sin mas(esta comentado), o cambiando el angulo)
 
+			Instantiate(theEnemy, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
+
+
 		//genera enemigo random:
 				enemys=Random.Range(1,4);
 				xScale = Random.Range(8,12);

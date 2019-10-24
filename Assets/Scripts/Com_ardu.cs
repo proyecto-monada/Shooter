@@ -1,19 +1,30 @@
-﻿using UnityEngine;
-/* ArduinoConnector by Alan Zucconi
- * http://www.alanzucconi.com/?p=2979
- */
-using UnityEngine;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.Collections;
 using System.IO.Ports;
+using UnityEngine;
 
-public class ArduinoConnector : MonoBehaviour
+public class Com_ardu : MonoBehaviour
 {
-    public int a = 10;
+    /*
+     // Start is called before the first frame update
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        
+    }
+    */
+    private string s;
+    public Double x = 50;
+    public Double y;
+    public Double z;
     /* The serial port where the Arduino is connected. */
     [Tooltip("The serial port where the Arduino is connected")]
-    public string port = "COM12";
+    public string port = "COM2";
     /* The baudrate of the serial port. */
     [Tooltip("The baudrate of the serial port")]
     public int baudrate = 9600;
@@ -36,7 +47,7 @@ public class ArduinoConnector : MonoBehaviour
         stream.BaseStream.Flush();
     }
 
-    public string ReadFromArduino(int timeout = 0)
+    public string ReadFromArduino(int timeout)
     {
         stream.ReadTimeout = timeout;
         try
@@ -91,7 +102,24 @@ public class ArduinoConnector : MonoBehaviour
     {
         Open();
         //WriteToArduino("PING");
-        a=int.Parse(ReadFromArduino(10000));
+        s = ReadFromArduino(350);
+        if (s.Equals("x"))
+        {
+            x = Double.Parse(ReadFromArduino(350));
+        }
+        else if (s.Equals("y"))
+        {
+            y = Double.Parse(ReadFromArduino(350));
+        }
+        else if (s.Equals("z"))
+        {
+            z = Double.Parse(ReadFromArduino(350));
+        }
+        else {
+            x = 10;
+            y = 20;
+            z = 30;
+        }
         //AsynchronousReadFromArduino((string s) => a=int.Parse(s), () => Debug.LogError("Error!"), 10000f);
         Close();
     }
@@ -101,4 +129,3 @@ public class ArduinoConnector : MonoBehaviour
         stream.Close();
     }
 }
-

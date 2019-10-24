@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 int ldr = 0;
 bool boton = 0;
 
@@ -25,7 +24,7 @@ void loop() {
 
   delay(10);
 }
-=======
+
 int ldr = 0;
 bool boton = 0;
 
@@ -52,4 +51,3 @@ void loop() {
 
   delay(10);
 }
->>>>>>> cf512e1bcec256c971526caf826a03282bb7499f
