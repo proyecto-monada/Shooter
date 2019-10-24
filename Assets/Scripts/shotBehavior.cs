@@ -9,7 +9,7 @@ public class shotBehavior : MonoBehaviour
 
     public Vector3 m_target;
     public GameObject collisionExplosion;
-    public float speed;
+    public float speed=100;
 
 
     // Update is called once per frame

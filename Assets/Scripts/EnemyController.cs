@@ -37,7 +37,7 @@ public class EnemyController : MonoBehaviour
 		
   	      if (gameObject != null)
   	      {
-   	         Destroy(gameObject, 5f);
+   	         Destroy(gameObject, 2f);
    	     }
 
  	   }

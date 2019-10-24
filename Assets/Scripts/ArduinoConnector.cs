@@ -13,7 +13,7 @@ public class ArduinoConnector : MonoBehaviour
     public int a = 10;
     /* The serial port where the Arduino is connected. */
     [Tooltip("The serial port where the Arduino is connected")]
-    public string port = "COM2";
+    public string port = "COM12";
     /* The baudrate of the serial port. */
     [Tooltip("The baudrate of the serial port")]
     public int baudrate = 9600;
