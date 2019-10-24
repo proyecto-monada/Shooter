@@ -35,11 +35,9 @@ public class raygun : MonoBehaviour
 			
 			if(hit.collider.tag=="Fondo"){
 							Puntuacion.combo = 1;
-							Debug.Log("Fondo funciona");
 						}
 						if(hit.collider.tag=="CabezaZombie"){
 							Puntuacion.extra=50;
-							Debug.Log("Cabeza funciona");
 						}else{
 							Puntuacion.extra=0;
 						}
