@@ -37,7 +37,6 @@ public class Generacion : MonoBehaviour
 			//timeGenerator = Random.Range(1,4);
 
 			//crea el enemigo(sin mas(esta comentado), o cambiando el angulo)
-		//	Instantiate(theEnemy, new Vector3(xPos, 0, zPos), Quaternion.identity);
 
 		//genera enemigo random:
 				enemys=Random.Range(1,4);
@@ -47,17 +46,13 @@ public class Generacion : MonoBehaviour
 
 			if(enemys==1)Instantiate(theEnemy, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
 				theEnemy.transform.localScale = new Vector3(xScale/10, yScale/10, zScale/10);
-					//EnemyController enemy = GetComponent<EnemyController>();
-					//enemy.hValue=xScale*yScale*zScale/10;
+	
 			if(enemys==2)Instantiate(theEnemy2, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
 				theEnemy2.transform.localScale = new Vector3(xScale/10, yScale/10, zScale/10);
-					//theEnemy2.hValue=xScale*yScale*zScale/10;
+		
 			if(enemys==3)Instantiate(theEnemy3, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
 				theEnemy3.transform.localScale = new Vector3(xScale/10, yScale/10, zScale/10);
-					//theEnemy3.hValue=xScale*yScale*zScale/10;
 
-					//EnemyController enemy = GetComponent<EnemyController>();
-					//enemy.hValue=xScale*yScale*zScale/10;
 
 			yield return new WaitForSeconds(Random.Range(time1,time2));
 			enemyCount += 1;
