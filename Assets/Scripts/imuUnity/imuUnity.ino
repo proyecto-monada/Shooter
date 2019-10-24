@@ -42,7 +42,7 @@ bool trigger = 0, trigger0 = 0;
 
 void setup(void) {
 
-  Serial.begin(115200);
+  Serial.begin(9600);
 
   /* Initialise the sensor */
   if (!bno.begin())
@@ -77,12 +77,12 @@ void loop(void) {
   }
 
   // Mandamos por serial
-  Serial.print("imu");
+  Serial.print("#imu");
   Serial.print(",");
   Serial.print(x / NUM, 1);
   Serial.print(",");
-  Serial.print(y / NUM, 1);
-  Serial.print("#");
+  Serial.println(y / NUM, 1);
+  // Serial.print(",");
   // Serial.println(z / NUM, 1);
 
 
@@ -92,13 +92,13 @@ void loop(void) {
     CONTROL "#b" AL PRINCIPIO Y SEPARADO POR UNA COMA
   */
 //  trigger = digitalRead(TRIGGER);
-    Serial.print("trigg");
+    Serial.print("#trigg");
     Serial.print(",");
-    Serial.print(digitalRead(TRIGGER));
+    Serial.println(digitalRead(TRIGGER));
 
 
   /*Salto de linea para iguiente loop*/
-  Serial.println("");
+ // Serial.println("");
 
  // Serial.flush();
 

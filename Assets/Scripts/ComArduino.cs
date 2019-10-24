@@ -40,16 +40,16 @@ public class ComArduino : MonoBehaviour
                     vec_valor = valor.Split(','); //Separamos el String leido valiendonos de las comas y almacenamos los valores en un array.
 
                     control = vec_valor[0];
-                    if (control.Equals("imu"))
+                    if (control.Equals("#imu"))
                     {
                         imu_x = float.Parse(vec_valor[1]);
                         imu_y = float.Parse(vec_valor[2]);
                     }
-                    else if (control.Equals("trigg"))
+                    else if (control.Equals("#trigg"))
                     {
                         trigg = int.Parse(vec_valor[1]);
                     
-                }
+                    }
                     
                     
                
