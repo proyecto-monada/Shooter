@@ -29,15 +29,14 @@ public class ComArduino : MonoBehaviour
         {
             try //utilizamos el bloque try/catch para detectar una posible excepción.
             {
-
+                /*
                 cadena = serialPort.ReadLine(); //leemos una linea del puerto serie y la almacenamos en un string
              //   print(cadena); //printeamos la linea leida para verificar que leemos el dato que manda nuestro Arduino
-                vec_cadena = cadena.Split('#'); //Separamos el String leido valiendonos de los # y almacenamos los valores en un array.
-
-                for(int i = 0; i < vec_cadena.Length; i++)
-                {
-                    valor = vec_cadena[i]; //almacenamos en un string la parte de la cadena que toque
-                    print(valor); //printeamos la linea leida para verificar que leemos el dato que manda nuestro Arduino
+                vec_cadena = cadena.Split(';'); //Separamos el String leido valiendonos de los # y almacenamos los valores en un array.
+                */
+              
+                    valor = serialPort.ReadLine(); //almacenamos en un string la parte de la cadena que toque
+                                                   //      print(valor); //printeamos la linea leida para verificar que leemos el dato que manda nuestro Arduino
                     vec_valor = valor.Split(','); //Separamos el String leido valiendonos de las comas y almacenamos los valores en un array.
 
                     control = vec_valor[0];
@@ -49,7 +48,7 @@ public class ComArduino : MonoBehaviour
                     else if (control.Equals("trigg"))
                     {
                         trigg = int.Parse(vec_valor[1]);
-                    }
+                    
                 }
                     
                     
