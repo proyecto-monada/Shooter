@@ -20,10 +20,12 @@ public class Generacion : MonoBehaviour
 	public float time2=0;
 	public int enemyCount;
 	public int enemyCountMax;
+	//private Health health;
 
     void Start()
     {
         StartCoroutine(EnemyDrop());
+	//health=GetComponent<Health>();
     }
 	
 	IEnumerator EnemyDrop()
@@ -35,7 +37,6 @@ public class Generacion : MonoBehaviour
 			//timeGenerator = Random.Range(1,4);
 
 			//crea el enemigo(sin mas(esta comentado), o cambiando el angulo)
-		//	Instantiate(theEnemy, new Vector3(xPos, 0, zPos), Quaternion.identity);
 
 			Instantiate(theEnemy, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
 
@@ -45,10 +46,13 @@ public class Generacion : MonoBehaviour
 				xScale = Random.Range(8,12);
 				zScale = Random.Range(8,12);
 				yScale = Random.Range(8,12);
+
 			if(enemys==1)Instantiate(theEnemy, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
 				theEnemy.transform.localScale = new Vector3(xScale/10, yScale/10, zScale/10);
+	
 			if(enemys==2)Instantiate(theEnemy2, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
 				theEnemy2.transform.localScale = new Vector3(xScale/10, yScale/10, zScale/10);
+		
 			if(enemys==3)Instantiate(theEnemy3, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
 				theEnemy3.transform.localScale = new Vector3(xScale/10, yScale/10, zScale/10);
 
