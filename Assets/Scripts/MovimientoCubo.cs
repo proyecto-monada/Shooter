@@ -15,8 +15,8 @@ public class MovimientoCubo : MonoBehaviour
     void Update()
     {
         ComArduino comArdu = GameObject.Find("Com").GetComponent<ComArduino>();
-        // transform.position = new Vector3(comArdu.dato1,0,0);
-        transform.eulerAngles = new Vector3(0f, comArdu.dato1, 0f);
+        // transform.position = new Vector3(comArdu.imu_x,0,0);
+        transform.eulerAngles = new Vector3(0f, comArdu.imu_x, 0f);
         Poscubo = transform.eulerAngles;
     }
 }

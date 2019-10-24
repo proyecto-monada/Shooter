@@ -6,14 +6,16 @@ using System.IO.Ports; //incluimos el namespace Sustem.IO.Ports
 
 public class ComArduino : MonoBehaviour
 {
-
+    public string cadena;
+    public string[] vec_cadena;
     public string valor;
     public string[] vec_valor;
-    public float dato1;
-    public float dato2;
     public string control;
-    SerialPort serialPort = new SerialPort("COM5", 9600); //Inicializamos el puerto serie
-
+    public float imu_x;
+    public float imu_y;
+    public int trigg;
+    SerialPort serialPort = new SerialPort("COM5", 115200); //Inicializamos el puerto serie
+  
     void Start()
     {
 
@@ -28,17 +30,28 @@ public class ComArduino : MonoBehaviour
             try //utilizamos el bloque try/catch para detectar una posible excepción.
             {
 
-                valor = serialPort.ReadLine(); //leemos una linea del puerto serie y la almacenamos en un string
-                print(valor); //printeamos la linea leida para verificar que leemos el dato que manda nuestro Arduino
-                vec_valor = valor.Split(','); //Separamos el String leido valiendonos 
-                                              //de las comas y almacenamos los valores en un array.
+                cadena = serialPort.ReadLine(); //leemos una linea del puerto serie y la almacenamos en un string
+             //   print(cadena); //printeamos la linea leida para verificar que leemos el dato que manda nuestro Arduino
+                vec_cadena = cadena.Split('#'); //Separamos el String leido valiendonos de los # y almacenamos los valores en un array.
 
-                control = vec_valor[0];
-                if (control.Equals("#"))
+                for(int i = 0; i < vec_cadena.Length; i++)
                 {
-                    dato1 = float.Parse(vec_valor[1]);
-                    dato2 = float.Parse(vec_valor[2]);
+                    valor = vec_cadena[i]; //almacenamos en un string la parte de la cadena que toque
+                    print(valor); //printeamos la linea leida para verificar que leemos el dato que manda nuestro Arduino
+                    vec_valor = valor.Split(','); //Separamos el String leido valiendonos de las comas y almacenamos los valores en un array.
+
+                    control = vec_valor[0];
+                    if (control.Equals("imu"))
+                    {
+                        imu_x = float.Parse(vec_valor[1]);
+                        imu_y = float.Parse(vec_valor[2]);
+                    }
+                    else if (control.Equals("trigg"))
+                    {
+                        trigg = int.Parse(vec_valor[1]);
+                    }
                 }
+                    
                     
                
                
