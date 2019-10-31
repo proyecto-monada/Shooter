@@ -15,7 +15,7 @@ GameObject:
   - component: {fileID: 6698734862368219234}
   m_Layer: 0
   m_Name: Zombie3R
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -29,7 +29,7 @@ Transform:
   m_GameObject: {fileID: 806214785225763010}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 6.31, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 0.9}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 809244897255128908}
   - {fileID: 803026817907319694}
@@ -64,15 +64,7 @@ Animator:
   m_UpdateMode: 0
   m_ApplyRootMotion: 1
   m_LinearVelocityBlending: 0
-  m_WarningMessage: '
-
-    Transform ''Bip01 L Hand'' has been deleted
-
-    Transform ''Bip01 L Forearm'' has been deleted
-
-    Transform ''Bip01 L UpperArm'' has been deleted
-
-    Transform ''Bip01 L Clavicle'' has been deleted'
+  m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0

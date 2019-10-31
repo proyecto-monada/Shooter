@@ -38,17 +38,17 @@ public class Generacion : MonoBehaviour
 
 			//crea el enemigo(sin mas(esta comentado), o cambiando el angulo)
 
-			Instantiate(theEnemy, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
+			//Instantiate(theEnemy, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
 
 
 		//genera enemigo random:
 				//enemys=Random.Range(1,4);
-				xScale = Random.Range(8,12);
-				zScale = Random.Range(8,12);
-				yScale = Random.Range(8,12);
+				//xScale = Random.Range(8,12);
+				//zScale = Random.Range(8,12);
+				//yScale = Random.Range(8,12);
 
 			if(enemys==1)Instantiate(theEnemy, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
-				theEnemy.transform.localScale = new Vector3(xScale/10, yScale/10, zScale/10);
+				//theEnemy.transform.localScale = new Vector3(xScale/10, yScale/10, zScale/10);
 	
 			//if(enemys==2)Instantiate(theEnemy2, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
 			//	theEnemy2.transform.localScale = new Vector3(xScale/10, yScale/10, zScale/10);
