@@ -38,7 +38,6 @@ public class raygun : MonoBehaviour
 				enemy.TakeDamage(damage);
 			}
 
-<<<<<<< HEAD
 
 /*
  	EnemyController enemy = hit.transform.GetComponent<EnemyController>();
