@@ -32,6 +32,7 @@ public class raygun : MonoBehaviour
         if (Physics.Raycast(ray, out hit, range))
         {
 		if(hit.transform.CompareTag("Enemy")){
+			
 				//Health health = hit.transform.GetComponent<Health>();
 			EnemyController enemy = hit.transform.GetComponent<EnemyController>();
 					//health.hValue -= damage;

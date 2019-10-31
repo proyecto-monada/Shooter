@@ -12,12 +12,14 @@ public class Target : MonoBehaviour
 
         if (vida <= 0f)
         {
+			
             Die();
         }
     }
 
     void Die()
     {
+
         Destroy(gameObject);
     }
 
