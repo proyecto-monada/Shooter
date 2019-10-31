@@ -32,12 +32,16 @@ public class raygun : MonoBehaviour
         if (Physics.Raycast(ray, out hit, range))
         {
 		if(hit.transform.CompareTag("Enemy")){
-			//Health health = hit.transform.GetComponent<Health>();
+				//Health health = hit.transform.GetComponent<Health>();
 			EnemyController enemy = hit.transform.GetComponent<EnemyController>();
-				//health.hValue -= damage;
+					//health.hValue -= damage;
 				enemy.TakeDamage(damage);
 			}
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> 4799b18dc5cb96530dc4a0add4bb61fe03eff979
 
 /*
  	EnemyController enemy = hit.transform.GetComponent<EnemyController>();
@@ -46,8 +50,8 @@ public class raygun : MonoBehaviour
   		{
     		enemy.die();
   		 }
-=======
-			EnemyController enemy = hit.transform.GetComponent<EnemyController>();
+
+			/*EnemyController enemy = hit.transform.GetComponent<EnemyController>();
 			
 			if(hit.collider.tag=="Fondo"){
 							Puntuacion.combo = 1;
@@ -60,14 +64,13 @@ public class raygun : MonoBehaviour
 			if(enemy != null) 
 			{
 				enemy.die();
-		    }
->>>>>>> 87985bf22f1def870a65dece3b2c100edf213ee2
+		    }*/
 
             GameObject laser = GameObject.Instantiate(m_shotPrefab, transform.position, transform.rotation) as GameObject;
             laser.GetComponent<shotBehavior>().setTarget(hit.point);
             GameObject.Destroy(laser, 2f);
 
-*/
+
         }
 
     }
