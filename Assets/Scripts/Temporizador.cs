@@ -13,6 +13,7 @@ public class Temporizador : MonoBehaviour
 	{
 		tiempo -= Time.deltaTime; 
 		contador.text = "" + tiempo.ToString("f0");	
+		
 	}
 	
 
