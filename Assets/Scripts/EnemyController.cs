@@ -41,7 +41,7 @@ public class EnemyController : MonoBehaviour
    	     GetComponent<Animator>().enabled = false;
    	     setRigidbodyState(false);
     	    setColliderState(true);
-		//Puntuacion.score += 100;
+		Puntuacion.score += 100;
   	      if (gameObject != null)
   	      {
    	         Destroy(gameObject, 2f);
