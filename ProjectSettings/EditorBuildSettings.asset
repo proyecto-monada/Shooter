@@ -14,4 +14,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Escenario.unity
     guid: f866951b34c0de7478438bb009b0f815
+  - enabled: 1
+    path: Assets/Scenes/Table.unity
+    guid: fbf70337b0d85724c9835271df0d49a2
   m_configObjects: {}
