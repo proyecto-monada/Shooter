@@ -6,7 +6,7 @@ public class raygun : MonoBehaviour
 {		//detecta que con rayo puede haber colision con algo, si es el zombie activa la muerte
 		//!!se crea un objeto vacio en la punta del arma!!
     public float shootRate;
-    private float m_shootRateTimeStamp;
+    private float m_shootRateTimeStamp=0.0f;
 
     public GameObject m_shotPrefab;
 	public float damage=0;
@@ -18,13 +18,10 @@ public class raygun : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButton(0))
+        if (Input.GetMouseButton(0) && Time.time > m_shootRateTimeStamp)
         {
-            if (Time.time > m_shootRateTimeStamp)
-            {
-                shootRay();
-                m_shootRateTimeStamp = Time.time + shootRate;
-            }
+            shootRay();
+            m_shootRateTimeStamp = Time.time + shootRate;
         }
 
     }
@@ -41,6 +38,7 @@ public class raygun : MonoBehaviour
 				enemy.TakeDamage(damage);
 			}
 
+<<<<<<< HEAD
 
 /*
  	EnemyController enemy = hit.transform.GetComponent<EnemyController>();
@@ -49,6 +47,22 @@ public class raygun : MonoBehaviour
   		{
     		enemy.die();
   		 }
+=======
+			EnemyController enemy = hit.transform.GetComponent<EnemyController>();
+			
+			if(hit.collider.tag=="Fondo"){
+							Puntuacion.combo = 1;
+						}
+						if(hit.collider.tag=="CabezaZombie"){
+							Puntuacion.extra=50;
+						}else{
+							Puntuacion.extra=0;
+						}
+			if(enemy != null) 
+			{
+				enemy.die();
+		    }
+>>>>>>> 87985bf22f1def870a65dece3b2c100edf213ee2
 
             GameObject laser = GameObject.Instantiate(m_shotPrefab, transform.position, transform.rotation) as GameObject;
             laser.GetComponent<shotBehavior>().setTarget(hit.point);
