@@ -5,14 +5,16 @@ using UnityEngine.UI;
 
 public class Temporizador : MonoBehaviour
 {
-	public Text contador;
-	public float tiempo = 0.0f;
+	//public Text contador;
+	public float tiempo = 10;
 
 	
 	public void Update() 
 	{
-		tiempo -= Time.deltaTime; 
-		contador.text = "" + tiempo.ToString("f0");	
+		
+		if(tiempo > 0) tiempo -= Time.deltaTime; 
+		//contador.text = "" + tiempo.ToString("f0");	
+		if(tiempo <= 0) Application.LoadLevel("Table");
 	}
 	
 

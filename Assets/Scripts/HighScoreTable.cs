@@ -59,6 +59,7 @@ public class HighScoreTable : MonoBehaviour
 		Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
 		ChangedHighscores = highscores;
 		
+		
 		//Show previous ranking
 		
 		highscoreEntryTransformList = new List<Transform>();
