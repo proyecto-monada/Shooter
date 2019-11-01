@@ -126,7 +126,7 @@ GameObject:
   - component: {fileID: 15870249}
   m_Layer: 0
   m_Name: Pared izquierda
-  m_TagString: Untagged
+  m_TagString: Fondo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -307,7 +307,7 @@ GameObject:
   - component: {fileID: 36673553}
   m_Layer: 0
   m_Name: Pared-derecha
-  m_TagString: Untagged
+  m_TagString: Fondo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -577,7 +577,7 @@ GameObject:
   - component: {fileID: 90495583}
   m_Layer: 0
   m_Name: suelo-verde
-  m_TagString: Untagged
+  m_TagString: Fondo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -778,11 +778,11 @@ RectTransform:
   m_Father: {fileID: 531914257}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 248, y: -267}
+  m_AnchorMin: {x: 1, y: 1}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 1, y: 1}
 --- !u!114 &268654669
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1097,6 +1097,7 @@ GameObject:
   - component: {fileID: 463512890}
   - component: {fileID: 463512889}
   - component: {fileID: 463512891}
+  - component: {fileID: 463512892}
   m_Layer: 5
   m_Name: Contador
   m_TagString: Untagged
@@ -1118,11 +1119,11 @@ RectTransform:
   m_Father: {fileID: 531914257}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-  m_AnchorMin: {x: 0.5, y: 0.5}
-  m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -142, y: -126}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 160, y: 30}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_Pivot: {x: 0, y: 0}
 --- !u!114 &463512889
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1148,8 +1149,8 @@ MonoBehaviour:
     m_FontSize: 25
     m_FontStyle: 0
     m_BestFit: 0
-    m_MinSize: 2
-    m_MaxSize: 40
+    m_MinSize: 0
+    m_MaxSize: 300
     m_Alignment: 0
     m_AlignByGeometry: 0
     m_RichText: 1
@@ -1178,7 +1179,26 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   contador: {fileID: 463512889}
-  tiempo: 10
+  tiempo: 60
+--- !u!95 &463512892
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 463512887}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 9f763b2e38190ed4d820de4d2555db08, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1001 &473439113
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1370,6 +1390,7 @@ RectTransform:
   m_Children:
   - {fileID: 463512888}
   - {fileID: 268654668}
+  - {fileID: 1106181422}
   m_Father: {fileID: 1075440456}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1452,7 +1473,7 @@ GameObject:
   - component: {fileID: 883970638}
   m_Layer: 0
   m_Name: Pared-fondo
-  m_TagString: Untagged
+  m_TagString: Fondo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1702,7 +1723,7 @@ GameObject:
   - component: {fileID: 1028086701}
   m_Layer: 0
   m_Name: techo
-  m_TagString: Untagged
+  m_TagString: Fondo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1880,6 +1901,98 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1106181421
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1106181422}
+  - component: {fileID: 1106181425}
+  - component: {fileID: 1106181424}
+  - component: {fileID: 1106181423}
+  m_Layer: 5
+  m_Name: Puntuacion
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1106181422
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106181421}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 531914257}
+  m_RootOrder: 2
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 1, y: 0}
+  m_AnchorMax: {x: 1, y: 0}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 160, y: 30}
+  m_Pivot: {x: 1, y: 0}
+--- !u!114 &1106181423
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106181421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16fc599e6dc17e74f986fcfa003698c8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1106181424
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106181421}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 708705254, guid: f70555f144d8491a825f0804e09c671c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 25
+    m_FontStyle: 0
+    m_BestFit: 0
+    m_MinSize: 2
+    m_MaxSize: 40
+    m_Alignment: 0
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 'Puntuacion '
+--- !u!222 &1106181425
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1106181421}
+  m_CullTransparentMesh: 0
 --- !u!1 &1125833688
 GameObject:
   m_ObjectHideFlags: 0
@@ -1891,7 +2004,7 @@ GameObject:
   - component: {fileID: 1125833689}
   m_Layer: 0
   m_Name: ESCENARIO
-  m_TagString: Untagged
+  m_TagString: Fondo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1928,7 +2041,7 @@ GameObject:
   - component: {fileID: 1127706128}
   m_Layer: 0
   m_Name: Paredes
-  m_TagString: Untagged
+  m_TagString: Fondo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2011,7 +2124,7 @@ GameObject:
   - component: {fileID: 1280404690}
   m_Layer: 0
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Fondo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2634,7 +2747,7 @@ GameObject:
   - component: {fileID: 1644866230}
   m_Layer: 0
   m_Name: Suelo-ocre
-  m_TagString: Untagged
+  m_TagString: Fondo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2825,7 +2938,7 @@ GameObject:
   - component: {fileID: 1959751230}
   m_Layer: 0
   m_Name: Plane (1)
-  m_TagString: Untagged
+  m_TagString: Fondo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2914,7 +3027,7 @@ GameObject:
   - component: {fileID: 2056810261}
   m_Layer: 0
   m_Name: Taquillas
-  m_TagString: Untagged
+  m_TagString: Fondo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2986,7 +3099,7 @@ GameObject:
   - component: {fileID: 6800644867078731123}
   m_Layer: 0
   m_Name: puertas
-  m_TagString: Untagged
+  m_TagString: Fondo
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

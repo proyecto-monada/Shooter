@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Temporizador : MonoBehaviour
 {
 	public Text contador;
-	public float tiempo = 10;
+	public float tiempo = 0.0f;
 
 	
 	public void Update() 

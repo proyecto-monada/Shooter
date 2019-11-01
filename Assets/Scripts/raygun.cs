@@ -37,7 +37,16 @@ public class raygun : MonoBehaviour
 			EnemyController enemy = hit.transform.GetComponent<EnemyController>();
 					//health.hValue -= damage;
 				enemy.TakeDamage(damage);
-			}
+		}
+		if(hit.collider.tag=="Fondo"){
+			Puntuacion.combo = 1;
+		}
+		if(hit.collider.tag=="Headshot"){
+			Puntuacion.extra=50;
+			//Debug.Log("Cabeza funciona"); //para comprobar
+		}else{
+			Puntuacion.extra=0;
+		}
 
 
 
@@ -51,14 +60,7 @@ public class raygun : MonoBehaviour
 
 			/*EnemyController enemy = hit.transform.GetComponent<EnemyController>();
 			
-			if(hit.collider.tag=="Fondo"){
-							Puntuacion.combo = 1;
-						}
-						if(hit.collider.tag=="CabezaZombie"){
-							Puntuacion.extra=50;
-						}else{
-							Puntuacion.extra=0;
-						}
+			
 			if(enemy != null) 
 			{
 				enemy.die();
