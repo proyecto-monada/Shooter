@@ -12,7 +12,7 @@ public class HighScoreTable : MonoBehaviour
 	private List<Transform> highscoreEntryTransformList;
 	private Highscores ChangedHighscores;
 	
-	public InputField NewScore;
+	//public InputField NewScore;
 	public InputField NewName;
 	public InputField NewNumber;
 	
@@ -130,21 +130,21 @@ public class HighScoreTable : MonoBehaviour
 	
 	
 	public void GetNew(){
-		HighScoreEntry NewRanked = new HighScoreEntry{score = int.Parse(NewScore.text), name = NewName.text, number = int.Parse(NewNumber.text)};
+		HighScoreEntry NewRanked = new HighScoreEntry{score = Puntuacion.score, name = NewName.text, number = int.Parse(NewNumber.text)};
 		string json = JsonUtility.ToJson(NewRanked);
-		Debug.Log(json);
+		//Debug.Log(json);
 		entryNewScore.gameObject.SetActive(false);
 		string json0 = JsonUtility.ToJson(ChangedHighscores);
-		Debug.Log(json0);
+		//Debug.Log(json0);
 		
 		for(int i = 0; i < 10; i++){
 			if(NewRanked.score >= ChangedHighscores.highscoreEntryList[i].score){
 				HighScoreEntry tmp = ChangedHighscores.highscoreEntryList[i];
 				ChangedHighscores.highscoreEntryList[i] = NewRanked;
 				NewRanked = tmp;
-				Debug.Log("Más puntuación");
+				//Debug.Log("Más puntuación");
 				string json4 = JsonUtility.ToJson(NewRanked);
-				Debug.Log(json4);
+				//Debug.Log(json4);
 			}
 		}
 		
