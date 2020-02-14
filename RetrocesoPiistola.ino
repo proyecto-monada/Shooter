@@ -50,7 +50,7 @@ void setup(){
   digitalWrite(VIBRACION, LOW);
   //digitalWrite(RETROCESO, LOW);
 
-//  //SetUp del Timer para los pulsos de Ultrasonidos
+//
   TCCR1A = 0b00000011;  //OC1A y OC1A desconectados, WGM11 WGM10
   TCCR1B = 0b00011010;  //WGM13 WGM12 ; CS12 CS11 CS10 para el  preescaler
   //WGM = 1111 => Fast PWM con OCR1A como TOP
@@ -71,13 +71,13 @@ void loop(){
   }
   if(millis()-TiempoUltimo>10 && !digitalRead(GATILLO)) ult=LOW;
 
-  Serial.print(digitalRead(GATILLO)); //Funciona
-  Serial.print(digitalRead(MENU)); //Funciona
-  Serial.print(digitalRead(CARGAR)); //Funciona
-  Serial.print(digitalRead(ARRIBA)); //Corto
-  Serial.print(digitalRead(ABAJO)); //Corto
-  Serial.print(digitalRead(DERECHA));  //Funciona
-  Serial.println(digitalRead(IZQUIERDA)); //nop
+  Serial.print(digitalRead(GATILLO));
+  Serial.print(digitalRead(MENU));
+  Serial.print(digitalRead(CARGAR));
+  Serial.print(digitalRead(ARRIBA));
+  Serial.print(digitalRead(ABAJO));
+  Serial.print(digitalRead(DERECHA));
+  Serial.println(digitalRead(IZQUIERDA));
   delay(5);
 }
 
