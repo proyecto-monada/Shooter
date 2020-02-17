@@ -14,7 +14,7 @@ public class ComArduino : MonoBehaviour
     public float imu_x;
     public float imu_y;
     public int trigg;
-    SerialPort serialPort = new SerialPort("COM5", 115200); //Inicializamos el puerto serie
+    SerialPort serialPort = new SerialPort("COM7", 115200); //Inicializamos el puerto serie
   
     void Start()
     {
@@ -50,8 +50,6 @@ public class ComArduino : MonoBehaviour
                         trigg = int.Parse(vec_valor[1]);
                     
                     }
-                    
-                    
                
                
             }

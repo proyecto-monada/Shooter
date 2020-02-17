@@ -42,7 +42,7 @@ bool trigger = 0, trigger0 = 0;
 
 void setup(void) {
 
-  Serial.begin(9600);
+  Serial.begin(115200);
 
   /* Initialise the sensor */
   if (!bno.begin())
