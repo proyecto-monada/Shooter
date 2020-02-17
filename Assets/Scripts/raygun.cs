@@ -13,6 +13,13 @@ public class raygun : MonoBehaviour
 
     RaycastHit hit;
     float range = 1000.0f;
+	
+	/*public AudioClip HeadShot;
+	private AudioSource source;
+	
+	void Awake () {
+		source = GetComponent<AudioSource>();
+	}	*/
 
 
     void Update()
@@ -43,7 +50,8 @@ public class raygun : MonoBehaviour
 		}
 		if(hit.collider.tag=="Headshot"){
 			Puntuacion.extra=50;
-			//Debug.Log("Cabeza funciona"); //para comprobar
+			//source.PlayOneShot(HeadShot, 20F);
+			//Debug.Log("Cabeza funciona"); 
 		}else{
 			Puntuacion.extra=0;
 		}
