@@ -21,11 +21,11 @@ public class Generacion : MonoBehaviour
 	public int enemyCount;
 	public int enemyCountMax;
 	//private Health health;
+		//theEnemy.GetComponent<Animator>();
 
     void Start()
     {
         StartCoroutine(EnemyDrop());
-	//health=GetComponent<Health>();
     }
 	
 	IEnumerator EnemyDrop()
@@ -49,6 +49,7 @@ public class Generacion : MonoBehaviour
 
 			if(enemys==1)Instantiate(theEnemy, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
 				//theEnemy.transform.localScale = new Vector3(xScale/10, yScale/10, zScale/10);
+						//theEnemy.GetComponent<Animator>().speed = 4;
 	
 			//if(enemys==2)Instantiate(theEnemy2, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
 			//	theEnemy2.transform.localScale = new Vector3(xScale/10, yScale/10, zScale/10);
@@ -57,7 +58,7 @@ public class Generacion : MonoBehaviour
 			//	theEnemy3.transform.localScale = new Vector3(xScale/10, yScale/10, zScale/10);
 
 
-			yield return new WaitForSeconds(Random.Range(time1,time2));
+			yield return new WaitForSeconds(Random.Range(time1-((60-Temporizador.tiempo)/20) ,time2-((60-Temporizador.tiempo)/13) ));
 			enemyCount += 1;
 		}
 	}

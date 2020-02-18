@@ -5,9 +5,8 @@ using UnityEngine;
 public class EnemyController : MonoBehaviour
 {		//este scrip se le añade al enemigo en cuestion
 
-	//private Health health;
-
 	public float hValue=100f;
+	public float animationSpeedIncrementer = 1f;
 
 	public void TakeDamage(float damage){
 		hValue-=damage;
@@ -18,15 +17,13 @@ public class EnemyController : MonoBehaviour
 
           setRigidbodyState(true);
         setColliderState(false);
-        GetComponent<Animator>().enabled = true;
-
-	//health = GetComponent<Health>();
-	
+        GetComponent<Animator>().enabled = true;	
     }
 
     void Update()
     {
         CheckHealth();
+	GetComponent<Animator>().speed =1+((60-Temporizador.tiempo)/20);
     }
 
 	void CheckHealth(){
