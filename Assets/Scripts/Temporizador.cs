@@ -21,3 +21,6 @@ public class Temporizador : MonoBehaviour
 	}
 	
 }
+
+
+// si se modifica el tiempo, hay q modificar el script de generacion, y enemyController

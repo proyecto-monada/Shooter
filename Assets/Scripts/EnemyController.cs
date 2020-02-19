@@ -20,33 +20,35 @@ public class EnemyController : MonoBehaviour
         GetComponent<Animator>().enabled = true;	
     }
 
-    void Update()
-    {
+    void Update()	
+    {				// comprobamos a ver si el zombie tiene vida, y aumentamos su velocidad de forma gradual
         CheckHealth();
-	GetComponent<Animator>().speed =1+((60-Temporizador.tiempo)/20);
+	GetComponent<Animator>().speed =1+((60-Temporizador.tiempo)/20);	//a los 60 seg, va a velocidad x4
     }
 
 	void CheckHealth(){
-		//if(health.hValue <=0){
 		if(hValue <=0){
 			die();}
 	}
 
-//funcion muerte: cambia collider y rigid body y desactiva el animador, provocando el ragdoll
-	//destrulle el objeto despues de 5s
+		//funcion muerte: cambia collider y rigid body y desactiva el animador, provocando el ragdoll
+			//destrulle el objeto despues de 2s
 	public void die(){
 		hValue=1;
-   	     GetComponent<Animator>().enabled = false;
-   	     setRigidbodyState(false);
-    	    setColliderState(true);
+   	     GetComponent<Animator>().enabled = false;	//desactivamos animador para que deje de caminar
+   	     setRigidbodyState(false);			//activa el rigid global del zombie y desactiva el de sus piezas
+    	    setColliderState(true);			//desactiva el collider global del zombie y activa el de sus piezas
 		
   	      if (gameObject != null)
   	      {
-			Puntuacion.score += (100 + Puntuacion.extra)*Puntuacion.combo; //falta añadir puntos por velocidad del zombie
+			Puntuacion.score += (100 + Puntuacion.extra) * Puntuacion.combo * ((60-Temporizador.tiempo)/30); 
+			//puntos por baja   base    p extra	    k por matar si fallar	k relacionado con la velocidad y la generacion de los zombies (max: x2)
 			Puntuacion.combo++;
    	         Destroy(gameObject, 2f);
    	     }
  	   }
+
+
 //coje todos los rigibodys y los kinematiza/no salvo el padre q lo no/kinematiza
 	void setRigidbodyState(bool state)
   	  {	
