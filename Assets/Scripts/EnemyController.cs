@@ -6,6 +6,7 @@ public class EnemyController : MonoBehaviour
 {		//este scrip se le añade al enemigo en cuestion
 
 	public float hValue=100f;
+	public GameObject points;
 	public float animationSpeedIncrementer = 1f;
 
 	public void TakeDamage(float damage){
@@ -41,10 +42,14 @@ public class EnemyController : MonoBehaviour
 		
   	      if (gameObject != null)
   	      {
-			Puntuacion.score += (100 + Puntuacion.extra) * Puntuacion.combo * ((60-Temporizador.tiempo)/30); 
-			//puntos por baja   base    p extra	    k por matar si fallar	k relacionado con la velocidad y la generacion de los zombies (max: x2)
+			
+			Puntuacion.score += (int)((100 + Puntuacion.extra) * Puntuacion.combo * (1+((60-Temporizador.tiempo)/30))); 
+			//puntos por baja   base    p extra	    k por matar si fallar	k relacionado con la velocidad y la generacion de los zombies (max: x3)
 			Puntuacion.combo++;
-   	         Destroy(gameObject, 2f);
+	
+			Instantiate(points, new Vector3(transform.position.x, transform.position.y+3,transform.position.z+1),Quaternion.Euler(0,0,0));
+
+   	        Destroy(gameObject, 2f);
    	     }
  	   }
 
