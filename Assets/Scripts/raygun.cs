@@ -51,7 +51,7 @@ public class raygun : MonoBehaviour
 		if(hit.collider.tag=="Headshot"){
 			Puntuacion.extra=50;
 			//source.PlayOneShot(HeadShot, 20F);
-			Debug.Log("Cabeza funciona"); 
+			//Debug.Log("Cabeza funciona"); 
 		}else{
 			Puntuacion.extra=0;
 		}

@@ -15,7 +15,7 @@ public class SangreAparece : MonoBehaviour
 	
     void Update()
     {
-        if (Puntuacion.combo>=7){
+        if (Puntuacion.combo>=5){
 			aparece.SetActive(true);
 			aparece1.SetActive(true);
 		}else{
