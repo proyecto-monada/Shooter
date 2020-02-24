@@ -6,7 +6,6 @@ public class EnemyController : MonoBehaviour
 {		//este scrip se le añade al enemigo en cuestion
 
 	public float hValue=100f;
-	public GameObject points;
 	public float animationSpeedIncrementer = 1f;
 
 	public void TakeDamage(float damage){
@@ -21,43 +20,33 @@ public class EnemyController : MonoBehaviour
         GetComponent<Animator>().enabled = true;	
     }
 
-    void Update()	
-    {				// comprobamos a ver si el zombie tiene vida, y aumentamos su velocidad de forma gradual
+    void Update()
+    {
         CheckHealth();
-	GetComponent<Animator>().speed =1+((60-Temporizador.tiempo)/20);	//a los 60 seg, va a velocidad x4
+	GetComponent<Animator>().speed =1+((60-Temporizador.tiempo)/20);
     }
 
 	void CheckHealth(){
+		//if(health.hValue <=0){
 		if(hValue <=0){
 			die();}
 	}
 
-		//funcion muerte: cambia collider y rigid body y desactiva el animador, provocando el ragdoll
-			//destrulle el objeto despues de 2s
+//funcion muerte: cambia collider y rigid body y desactiva el animador, provocando el ragdoll
+	//destrulle el objeto despues de 5s
 	public void die(){
 		hValue=1;
-   	     GetComponent<Animator>().enabled = false;	//desactivamos animador para que deje de caminar
-   	     setRigidbodyState(false);			//activa el rigid global del zombie y desactiva el de sus piezas
-    	    setColliderState(true);			//desactiva el collider global del zombie y activa el de sus piezas
+   	     GetComponent<Animator>().enabled = false;
+   	     setRigidbodyState(false);
+    	    setColliderState(true);
 		
   	      if (gameObject != null)
   	      {
-<<<<<<< HEAD
 			Puntuacion.score += (100 + Puntuacion.extra)*Puntuacion.combo + 100* (int)GetComponent<Animator>().speed; 
-=======
-			
-			Puntuacion.score += (int)((100 + Puntuacion.extra) * Puntuacion.combo * (1+((60-Temporizador.tiempo)/30))); 
-			//puntos por baja   base    p extra	    k por matar si fallar	k relacionado con la velocidad y la generacion de los zombies (max: x3)
->>>>>>> d627ddd500c0524b0623c017bd4822a95f691284
 			Puntuacion.combo++;
-	
-			Instantiate(points, new Vector3(transform.position.x, transform.position.y+3,transform.position.z+1),Quaternion.Euler(0,0,0));
-
-   	        Destroy(gameObject, 2f);
+   	         Destroy(gameObject, 2f);
    	     }
  	   }
-
-
 //coje todos los rigibodys y los kinematiza/no salvo el padre q lo no/kinematiza
 	void setRigidbodyState(bool state)
   	  {	
