@@ -42,7 +42,7 @@ public class EnemyController : MonoBehaviour
 		
   	      if (gameObject != null)
   	      {
-			Puntuacion.score += (100 + Puntuacion.extra)*Puntuacion.combo; //falta añadir puntos por velocidad del zombie
+			Puntuacion.score += (100 + Puntuacion.extra)*Puntuacion.combo + 100* (int)GetComponent<Animator>().speed; 
 			Puntuacion.combo++;
    	         Destroy(gameObject, 2f);
    	     }
