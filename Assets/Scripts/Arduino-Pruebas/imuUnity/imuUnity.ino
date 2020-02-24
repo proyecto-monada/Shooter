@@ -4,7 +4,7 @@
 #include <utility/imumaths.h>
 
 #define NUM 50
-#define TRIGGER 7
+#define GATILLO 8
 
 /* This driver uses the Adafruit unified sensor library (Adafruit_Sensor),
    which provides a common 'type' for sensor data and some helper functions.
@@ -36,13 +36,36 @@
 
 Adafruit_BNO055 bno = Adafruit_BNO055(55);
 
+/********* IMU ************/
+float x, y, z;              // Variables para la posición de la imu
+float x_ant, y_ant, z_ant;  // Variables para la posición anterior de la imu
+float x_inc, y_inc, z_inc;  // Incremento en cada eje
+bool trigger = 0;
 
-float x, y, z; // Variables para la posición de la imu
-bool trigger = 0, trigger0 = 0;
+/********* GATILLO *******/
+int gat_actual = 1;
+int gat_ant = 1;
+int trig = 0; // Se pone a 1 cuando pulsas, es lo que mandas
+
+
+void init_orientacion () {
+  //Los incrementos a 0
+  //Leemos la IMU
+  sensors_event_t event;
+  bno.getEvent(&event);
+
+  x = event.orientation.x;
+  y = event.orientation.y;
+  z = event.orientation.z;
+
+  x_ant = x; y_ant = y; z_ant = z;
+
+}
 
 void setup(void) {
 
   Serial.begin(115200);
+  pinMode(GATILLO, INPUT_PULLUP);
 
   /* Initialise the sensor */
   if (!bno.begin())
@@ -53,6 +76,9 @@ void setup(void) {
   }
 
   bno.setExtCrystalUse(true);
+
+  //Inicializamos la orientacion para que sea incremental
+  init_orientacion();
 }
 
 void loop(void) {
@@ -64,10 +90,11 @@ void loop(void) {
      mandamos por serial los valores medios con 1 decimal
      SEPARADOS POR COMAS Y CON UN CARACTER DE CONTROL "#imu" AL PRINCIPIO
   */
+  sensors_event_t event;
 
   for (int i = 0; i < NUM; i++) {
     // Estas dos líneas son para leer de la imu
-    sensors_event_t event;
+
     bno.getEvent(&event);
 
     // Acumulamos valores
@@ -75,34 +102,17 @@ void loop(void) {
     y += event.orientation.y;
     z += event.orientation.z;
   }
+  x = x / NUM;
+  y = y / NUM;
 
   // Mandamos por serial
   Serial.print("#imu");
   Serial.print(",");
-  Serial.print(x / NUM, 1);
+  Serial.print(x, 1);
   Serial.print(",");
-  Serial.println(y / NUM, 1);
+  Serial.println(y, 1);
   // Serial.print(",");
   // Serial.println(z / NUM, 1);
-
-
-  /*
-              BOTÓN
-    Leemos del botón y lo mandamos por serial con UN CARACTER DE
-    CONTROL "#b" AL PRINCIPIO Y SEPARADO POR UNA COMA
-  */
-//  trigger = digitalRead(TRIGGER);
-    Serial.print("#trigg");
-    Serial.print(",");
-    Serial.println(digitalRead(TRIGGER));
-
-
-  /*Salto de linea para iguiente loop*/
- // Serial.println("");
-
- // Serial.flush();
-
-
 
   delay(BNO055_SAMPLERATE_DELAY_MS);
 
@@ -111,4 +121,37 @@ void loop(void) {
   x = 0;
   y = 0;
   z = 0;
+
+
+  /*
+              GATILLO
+    Leemos del botón y lo mandamos por serial con UN CARACTER DE
+    CONTROL "#b" AL PRINCIPIO Y SEPARADO POR UNA COMA
+  */
+
+  //Cuando pulsas da un 0, de normal es un 1
+  //Gatillo: detector de flancos
+  gat_actual = digitalRead(GATILLO);
+  if (gat_actual == 0 && gat_ant == 1) {
+    //Gatillo pulsado
+    trig = 1;
+    //Serial.println("GATILLO PULSADO");
+  }
+  else trig = 0;
+  gat_ant = gat_actual;
+
+
+  Serial.print("#trigg");
+  Serial.print(",");
+  Serial.println(trig);
+
+
+  /*Salto de linea para iguiente loop*/
+  // Serial.println("");
+
+  // Serial.flush();
+
+
+
+
 }

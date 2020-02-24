@@ -16,7 +16,12 @@ public class MovimientoPistola : MonoBehaviour
 	{
 		ComArduino comArdu = GameObject.Find("Com").GetComponent<ComArduino>();
 		// transform.position = new Vector3(comArdu.imu_x,0,0);
+		//Pospistola = transform.eulerAngles;
+
+		//transform.eulerAngles = Pospistola + new Vector3(0f, 0f, comArdu.imu_x);
+
 		transform.eulerAngles = new Vector3(270f, 180f, comArdu.imu_x);
 		Pospistola = transform.eulerAngles;
+
 	}
 }

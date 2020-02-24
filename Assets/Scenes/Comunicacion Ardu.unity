@@ -428,7 +428,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 138940, guid: 40f85fbf483918e44862a63a0bc4bd2a, type: 3}
       propertyPath: m_Name
-      value: PM-40_Variant1
+      value: Pistola
       objectReference: {fileID: 0}
     - target: {fileID: 405050, guid: 40f85fbf483918e44862a63a0bc4bd2a, type: 3}
       propertyPath: m_LocalPosition.x
@@ -494,3 +494,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6bfe28bf9dfa0fe4ba9817cef4505195, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Pospistola: {x: 0, y: 0, z: 0}
