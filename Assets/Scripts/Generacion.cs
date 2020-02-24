@@ -20,6 +20,8 @@ public class Generacion : MonoBehaviour
 	public float time2=0;
 	public int enemyCount;
 	public int enemyCountMax;
+	//private Health health;
+		//theEnemy.GetComponent<Animator>();
 
     void Start()
     {
@@ -29,7 +31,14 @@ public class Generacion : MonoBehaviour
 	IEnumerator EnemyDrop()
 	{
 		while(enemyCount < enemyCountMax)
-		{
+		{	//area de generacion y tiempo entre spawn
+			//xPos = 0;
+			//zPos = Random.Range(0,5);
+			//timeGenerator = Random.Range(1,4);
+
+			//crea el enemigo(sin mas(esta comentado), o cambiando el angulo)
+
+			//Instantiate(theEnemy, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
 
 
 		//genera enemigo random:
@@ -40,6 +49,7 @@ public class Generacion : MonoBehaviour
 
 			if(enemys==1)Instantiate(theEnemy, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
 				//theEnemy.transform.localScale = new Vector3(xScale/10, yScale/10, zScale/10);
+						//theEnemy.GetComponent<Animator>().speed = 4;
 	
 			//if(enemys==2)Instantiate(theEnemy2, new Vector3(xPos, yPos, zPos), Quaternion.Euler(0,yRot,0));
 			//	theEnemy2.transform.localScale = new Vector3(xScale/10, yScale/10, zScale/10);
@@ -49,7 +59,6 @@ public class Generacion : MonoBehaviour
 
 
 			yield return new WaitForSeconds(Random.Range(time1-((60-Temporizador.tiempo)/20) ,time2-((60-Temporizador.tiempo)/13) ));
-					// espera un tiempo random que reduce en -3seg y -4.6 el time1 y time2 respectivamente A LOS 60seg
 			enemyCount += 1;
 		}
 	}

@@ -42,9 +42,13 @@ public class EnemyController : MonoBehaviour
 		
   	      if (gameObject != null)
   	      {
+<<<<<<< HEAD
+			Puntuacion.score += (100 + Puntuacion.extra)*Puntuacion.combo + 100* (int)GetComponent<Animator>().speed; 
+=======
 			
 			Puntuacion.score += (int)((100 + Puntuacion.extra) * Puntuacion.combo * (1+((60-Temporizador.tiempo)/30))); 
 			//puntos por baja   base    p extra	    k por matar si fallar	k relacionado con la velocidad y la generacion de los zombies (max: x3)
+>>>>>>> d627ddd500c0524b0623c017bd4822a95f691284
 			Puntuacion.combo++;
 	
 			Instantiate(points, new Vector3(transform.position.x, transform.position.y+3,transform.position.z+1),Quaternion.Euler(0,0,0));
