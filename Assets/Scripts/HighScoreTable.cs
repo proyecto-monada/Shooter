@@ -14,50 +14,50 @@ public class HighScoreTable : MonoBehaviour
 	
 	//public InputField NewScore;
 	public InputField NewName;
-	public InputField NewNumber;
+	public InputField NewCenter;
+	
+	void Start()
+	{
+	Cursor.visible = true;
+	}
+
 	
 	
 	private void Awake(){
+		
 		entryContainer = transform.Find("HighScoreEntryContainer");
 		entryTemplate = entryContainer.Find("HighScoreEntryTemplate");
 		entryNewScore = transform.Find("NewScore");
 		
 		entryTemplate.gameObject.SetActive(false);
 		
-		//For save something when RESET
+		Highscores highscores;
 		
-		/*
-		highscoreEntryList = new List<HighScoreEntry> (){
-			new HighScoreEntry{score = 0, name = "Marta", number = 15076},
-			new HighScoreEntry{score = 0, name = "Lucía", number = 14000},
-			new HighScoreEntry{score = 0, name = "Chechu", number = 14000},
-			new HighScoreEntry{score = 0, name = "Montse", number = 14000},
-			new HighScoreEntry{score = 0, name = "David", number = 15000},
-			new HighScoreEntry{score = 0, name = "Porto", number = 15000},
-			new HighScoreEntry{score = 0, name = "Diego", number = 14000},
-			new HighScoreEntry{score = 0, name = "Pedro", number = 15000},
-			new HighScoreEntry{score = 0, name = "Héctor", number = 15202},
-			new HighScoreEntry{score = 0, name = "Campi", number = 14054},
-		};
+		if (PlayerPrefs.GetString("highscoreTable") != null) {
+			Debug.Log("Sí json");
+			string jsonString = PlayerPrefs.GetString("highscoreTable");
+			highscores = JsonUtility.FromJson<Highscores>(jsonString);
+			ChangedHighscores = highscores;
+		}
+		else {
+			Debug.Log("No json");
+			highscoreEntryList = new List<HighScoreEntry> (){
+			new HighScoreEntry{score = 0, name = "Marta", center = "RESET"},
+			new HighScoreEntry{score = 0, name = "Lucía", center = "RESET"},
+			new HighScoreEntry{score = 0, name = "Chechu", center = "RESET"},
+			new HighScoreEntry{score = 0, name = "Montse", center = "RESET"},
+			new HighScoreEntry{score = 0, name = "David", center = "RESET"},
+			new HighScoreEntry{score = 0, name = "Porto", center = "RESET"},
+			new HighScoreEntry{score = 0, name = "Diego", center = "RESET"},
+			new HighScoreEntry{score = 0, name = "Pedro", center = "RESET"},
+			new HighScoreEntry{score = 0, name = "Héctor", center = "RESET"},
+			new HighScoreEntry{score = 0, name = "Campi", center = "RESET"},
+			};
 		
-		highscoreEntryTransformList = new List<Transform>();
-		
-		foreach (HighScoreEntry highscoreEntry in highscoreEntryList){
-			CreateHighScoreEntryTransform(highscoreEntry, entryContainer, highscoreEntryTransformList);
+			highscores = new Highscores {highscoreEntryList = highscoreEntryList};
+			ChangedHighscores = highscores;
 		}
 		
-		Highscores highscores = new Highscores {highscoreEntryList = highscoreEntryList};
-		ChangedHighscores = highscores;
-		string json = JsonUtility.ToJson(highscores);
-		PlayerPrefs.SetString("highscoreTable", json);
-		PlayerPrefs.Save();
-		Debug.Log(PlayerPrefs.GetString("highscoreTable"));
-		*/
-		
-		
-		string jsonString = PlayerPrefs.GetString("highscoreTable");
-		Highscores highscores = JsonUtility.FromJson<Highscores>(jsonString);
-		ChangedHighscores = highscores;
 		
 		//Show previous ranking
 		
@@ -89,11 +89,11 @@ public class HighScoreTable : MonoBehaviour
 		
 		int score = highscoreEntry.score;
 		string name = highscoreEntry.name;
-		int number = highscoreEntry.number;
+		string center = highscoreEntry.center;
 		
 		entryTransform.Find("ScoreText").GetComponent<Text>().text = score.ToString();
 		entryTransform.Find("PositionText").GetComponent<Text>().text = rankString;
-		entryTransform.Find("NumberText").GetComponent<Text>().text = number.ToString();
+		entryTransform.Find("CenterText").GetComponent<Text>().text = center;
 		entryTransform.Find("NamesText").GetComponent<Text>().text = name;
 		
 		entryTransform.Find("BackgroundTemplate").gameObject.SetActive(rank%2 == 1);
@@ -109,10 +109,10 @@ public class HighScoreTable : MonoBehaviour
 		
 		int score = highscoreEntry.score;
 		string name = highscoreEntry.name;
-		int number = highscoreEntry.number;
+		string center = highscoreEntry.center;
 		
 		entryTransform.Find("ScoreText").GetComponent<Text>().text = score.ToString();
-		entryTransform.Find("NumberText").GetComponent<Text>().text = number.ToString();
+		entryTransform.Find("CenterText").GetComponent<Text>().text = center;
 		entryTransform.Find("NamesText").GetComponent<Text>().text = name;	
 	}
 	
@@ -125,12 +125,12 @@ public class HighScoreTable : MonoBehaviour
 	private class HighScoreEntry {
 		public int score;
 		public string name;
-		public int number;
+		public string center;
 	}
 	
 	
 	public void GetNew(){
-		HighScoreEntry NewRanked = new HighScoreEntry{score = Puntuacion.score, name = NewName.text, number = int.Parse(NewNumber.text)};
+		HighScoreEntry NewRanked = new HighScoreEntry{score = Puntuacion.score, name = NewName.text, center = NewCenter.text};
 		string json = JsonUtility.ToJson(NewRanked);
 		//Debug.Log(json);
 		entryNewScore.gameObject.SetActive(false);

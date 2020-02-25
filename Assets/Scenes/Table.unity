@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewName: {fileID: 1458217828}
-  NewNumber: {fileID: 527573297}
+  NewCenter: {fileID: 0}
 --- !u!1 &347696026
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,7 +786,7 @@ GameObject:
   - component: {fileID: 527573298}
   - component: {fileID: 527573297}
   m_Layer: 5
-  m_Name: NewNumber
+  m_Name: NewCenter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -850,7 +850,7 @@ MonoBehaviour:
     m_DisabledTrigger: Disabled
   m_Interactable: 1
   m_TargetGraphic: {fileID: 527573298}
-  m_TextComponent: {fileID: 1109480046}
+  m_TextComponent: {fileID: 0}
   m_Placeholder: {fileID: 389298797}
   m_ContentType: 0
   m_InputType: 0
@@ -1443,7 +1443,7 @@ GameObject:
   - component: {fileID: 1088492448}
   - component: {fileID: 1088492447}
   m_Layer: 5
-  m_Name: Number
+  m_Name: Center
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1501,7 +1501,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Num
+  m_Text: 'Center
 
 '
 --- !u!222 &1088492448
@@ -1562,7 +1562,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_Color: {r: 0.21960786, g: 0.21960786, b: 0.21960786, a: 1}
   m_RaycastTarget: 1
   m_OnCullStateChanged:
     m_PersistentCalls:
@@ -1578,11 +1578,11 @@ MonoBehaviour:
     m_MaxSize: 40
     m_Alignment: 0
     m_AlignByGeometry: 0
-    m_RichText: 0
-    m_HorizontalOverflow: 1
+    m_RichText: 1
+    m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Enter University Number
+  m_Text: Enter Center Name
 --- !u!222 &1109480047
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1682,7 +1682,7 @@ GameObject:
   - component: {fileID: 1230384445}
   - component: {fileID: 1230384444}
   m_Layer: 5
-  m_Name: NumberText
+  m_Name: CenterText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1740,7 +1740,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Num
+  m_Text: 'Center
 
 '
 --- !u!222 &1230384445
