@@ -10,7 +10,7 @@ public class EnemyController : MonoBehaviour
 	public float animationSpeedIncrementer = 1f;
 
 	public void TakeDamage(float damage){
-		hValue-=damage;
+		hValue-=damage;			///////////////////////////
 	}
     
     void Start()

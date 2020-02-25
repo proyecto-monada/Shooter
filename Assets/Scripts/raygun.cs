@@ -25,9 +25,9 @@ public class raygun : MonoBehaviour
     void Update()
     {
 
-        if (Input.GetMouseButton(0) && Time.time > m_shootRateTimeStamp)
+        if (Input.GetMouseButton(0) && Time.time > m_shootRateTimeStamp )
         {
-            shootRay();
+            //shootRay();
             m_shootRateTimeStamp = Time.time + shootRate;
         }
 
@@ -39,10 +39,7 @@ public class raygun : MonoBehaviour
         if (Physics.Raycast(ray, out hit, range))
         {
 		if(hit.transform.CompareTag("Enemy")){
-			
-				//Health health = hit.transform.GetComponent<Health>();
 			EnemyController enemy = hit.transform.GetComponent<EnemyController>();
-					//health.hValue -= damage;
 				enemy.TakeDamage(damage);
 		}
 		if(hit.collider.tag=="Fondo"){
@@ -74,9 +71,9 @@ public class raygun : MonoBehaviour
 				enemy.die();
 		    }*/
 
-            GameObject laser = GameObject.Instantiate(m_shotPrefab, transform.position, transform.rotation) as GameObject;
+           /* GameObject laser = GameObject.Instantiate(m_shotPrefab, transform.position, transform.rotation) as GameObject;
             laser.GetComponent<shotBehavior>().setTarget(hit.point);
-            GameObject.Destroy(laser, 0.1f);
+            GameObject.Destroy(laser, 2f); */
 
 
         }
