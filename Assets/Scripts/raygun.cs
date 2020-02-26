@@ -44,6 +44,7 @@ public class raygun : MonoBehaviour
 		}
 		if(hit.collider.tag=="Fondo"){
 			Puntuacion.combo = 1;
+			Debug.LogWarning("Fondo funciona");
 		}
 		if(hit.collider.tag=="Headshot"){
 			Puntuacion.extra=50;
