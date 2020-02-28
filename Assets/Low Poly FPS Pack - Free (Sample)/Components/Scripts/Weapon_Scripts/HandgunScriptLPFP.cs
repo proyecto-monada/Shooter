@@ -5,8 +5,6 @@ using UnityEngine.UI;
 // ----- Low Poly FPS Pack Free Version -----
 public class HandgunScriptLPFP : MonoBehaviour {
 
-///  Collider cabeza;
-
 
 public float damage=50;////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
@@ -185,7 +183,6 @@ public float damage=50;/////////////////////////////////////////////////////////
 		//Set the shoot sound to audio source
 		shootAudioSource.clip = SoundClips.shootSound;
 		
-///		cabeza= GetComponent<EsfereCollider>();
 	}
 
 	private void LateUpdate () {
@@ -356,7 +353,7 @@ if (Physics.Raycast(ray, out hit, 1000.0f))
 		if(hit.collider.tag=="Fondo"){
 			Puntuacion.combo = 1;
 		}
-		if(hit.collider.tag=="Enemy"){
+		if(hit.collider.isTrigger){
 			Puntuacion.extra=50;
 			//source.PlayOneShot(HeadShot, 20F);
 			//Debug.Log("Cabeza funciona"); 

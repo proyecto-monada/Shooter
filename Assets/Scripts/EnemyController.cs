@@ -8,9 +8,11 @@ public class EnemyController : MonoBehaviour
 	public float hValue=100f;
 	public GameObject points;
 	public float animationSpeedIncrementer = 1f;
+	
+	//private Collider cabeza;
 
 	public void TakeDamage(float damage){
-		hValue-=damage;			///////////////////////////
+		hValue-=damage;		///////////////////////////
 	}
     
     void Start()
@@ -18,7 +20,9 @@ public class EnemyController : MonoBehaviour
 
           setRigidbodyState(true);
         setColliderState(false);
-        GetComponent<Animator>().enabled = true;	
+        GetComponent<Animator>().enabled = true;
+			
+	//		cabeza= GetComponent<SphereCollider>();
     }
 
     void Update()	
