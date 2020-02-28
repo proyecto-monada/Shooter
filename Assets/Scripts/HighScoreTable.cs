@@ -16,14 +16,11 @@ public class HighScoreTable : MonoBehaviour
 	public InputField NewName;
 	public InputField NewCenter;
 	
-	void Start()
-	{
-	Cursor.visible = true;
-	}
-
-	
 	
 	private void Awake(){
+		
+		Cursor.visible = true;
+		Cursor.lockState = CursorLockMode.None;
 		
 		entryContainer = transform.Find("HighScoreEntryContainer");
 		entryTemplate = entryContainer.Find("HighScoreEntryTemplate");
@@ -131,10 +128,10 @@ public class HighScoreTable : MonoBehaviour
 	
 	public void GetNew(){
 		HighScoreEntry NewRanked = new HighScoreEntry{score = Puntuacion.score, name = NewName.text, center = NewCenter.text};
-		string json = JsonUtility.ToJson(NewRanked);
+		//string json = JsonUtility.ToJson(NewRanked);
 		//Debug.Log(json);
 		entryNewScore.gameObject.SetActive(false);
-		string json0 = JsonUtility.ToJson(ChangedHighscores);
+		//string json0 = JsonUtility.ToJson(ChangedHighscores);
 		//Debug.Log(json0);
 		
 		for(int i = 0; i < 10; i++){
