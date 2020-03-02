@@ -57,6 +57,10 @@ namespace FPSControllerLPFP
         private FpsInput input;
 #pragma warning restore 649
 
+		//ÄÑADIDO POR MONCHE
+		private Vector3 imu_origin;
+		//FIN
+
         private Rigidbody _rigidbody;
         private CapsuleCollider _collider;
         private AudioSource _audioSource;
@@ -83,8 +87,14 @@ namespace FPSControllerLPFP
             _rotationY = new SmoothRotation(RotationYRaw);
             _velocityX = new SmoothVelocity();
             _velocityZ = new SmoothVelocity();
-            Cursor.lockState = CursorLockMode.Locked;
+            //Cursor.lockState = CursorLockMode.Locked;
             ValidateRotationRestriction();
+
+			//AÑADIDO POR MONCHE
+			ComArduino comArdu = GameObject.Find("Com").GetComponent<ComArduino>();
+			imu_origin.x = comArdu.imu_x;
+			imu_origin.y = 0f;
+			imu_origin.z = comArdu.imu_y;
         }
 			
         private Transform AssignCharactersCamera()
@@ -151,9 +161,11 @@ namespace FPSControllerLPFP
 
         private void RotateCameraAndCharacter()
         {
-            var rotationX = _rotationX.Update(RotationXRaw, rotationSmoothness);
+
+			var rotationX = _rotationX.Update(RotationXRaw, rotationSmoothness);
             var rotationY = _rotationY.Update(RotationYRaw, rotationSmoothness);
-            var clampedY = RestrictVerticalRotation(rotationY);
+
+			var clampedY = RestrictVerticalRotation(rotationY);
             _rotationY.Current = clampedY;
 			var worldUp = arms.InverseTransformDirection(Vector3.up);
 			var rotation = arms.rotation *

@@ -14,7 +14,8 @@ public class ComArduino : MonoBehaviour
     public float imu_x;
     public float imu_y;
     public int trigg;
-    SerialPort serialPort = new SerialPort("COM7", 115200); //Inicializamos el puerto serie
+	//public static string com_ardu = "COM7";
+	SerialPort serialPort = new SerialPort("COM6", 115200); //Inicializamos el puerto serie
   
     void Start()
     {
