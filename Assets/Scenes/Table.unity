@@ -315,7 +315,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   NewName: {fileID: 1458217828}
-  NewCenter: {fileID: 0}
+  NewCenter: {fileID: 527573297}
 --- !u!1 &347696026
 GameObject:
   m_ObjectHideFlags: 0
@@ -771,8 +771,75 @@ PrefabInstance:
       propertyPath: m_AnchoredPosition.y
       value: -180
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    - target: {fileID: 6570494156077602811, guid: 3c67e2cc651098a41b73fcbc43706612,
+        type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: -222
+      objectReference: {fileID: 0}
+    - target: {fileID: 8040266615573658991, guid: 3c67e2cc651098a41b73fcbc43706612,
+        type: 3}
+      propertyPath: m_Name
+      value: ButtonMenu
+      objectReference: {fileID: 0}
+    - target: {fileID: 9057532662854940533, guid: 3c67e2cc651098a41b73fcbc43706612,
+        type: 3}
+      propertyPath: m_Text
+      value: 'Proyecto Monada v0.1
+
+'
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650311939492717612, guid: 3c67e2cc651098a41b73fcbc43706612,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650311939492717612, guid: 3c67e2cc651098a41b73fcbc43706612,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 11500000, guid: 8a128dfcdee8aa64db00d142d97d5971,
+        type: 3}
+    - target: {fileID: 8650311939492717612, guid: 3c67e2cc651098a41b73fcbc43706612,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650311939492717612, guid: 3c67e2cc651098a41b73fcbc43706612,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8650311939492717612, guid: 3c67e2cc651098a41b73fcbc43706612,
+        type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: 
+      objectReference: {fileID: 0}
+    - target: {fileID: 5751795095773782318, guid: 3c67e2cc651098a41b73fcbc43706612,
+        type: 3}
+      propertyPath: m_Text
+      value: ' MENU'
+      objectReference: {fileID: 0}
+    m_RemovedComponents:
+    - {fileID: 865356188638994614, guid: 3c67e2cc651098a41b73fcbc43706612, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: 3c67e2cc651098a41b73fcbc43706612, type: 3}
+--- !u!1 &525170121 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8040266615573658991, guid: 3c67e2cc651098a41b73fcbc43706612,
+    type: 3}
+  m_PrefabInstance: {fileID: 525170120}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &525170122
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525170121}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8a128dfcdee8aa64db00d142d97d5971, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &527573295
 GameObject:
   m_ObjectHideFlags: 0

@@ -55,7 +55,9 @@ public class HighScoreTable : MonoBehaviour
 			ChangedHighscores = highscores;
 		}
 		
-		
+		if(Puntuacion.score < ChangedHighscores.highscoreEntryList[9].score) {
+			entryNewScore.gameObject.SetActive(false);
+		}
 		//Show previous ranking
 		
 		highscoreEntryTransformList = new List<Transform>();
