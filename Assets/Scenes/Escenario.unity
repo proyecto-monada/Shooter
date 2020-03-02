@@ -1783,6 +1783,11 @@ PrefabInstance:
       propertyPath: jumpForce
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 114352007083497230, guid: c24fed9fa91f7634fbc8e5e12405008e,
+        type: 3}
+      propertyPath: mouseSensitivity
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 224550047390012680, guid: c24fed9fa91f7634fbc8e5e12405008e,
         type: 3}
       propertyPath: m_LocalPosition.z
