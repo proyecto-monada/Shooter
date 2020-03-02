@@ -13,6 +13,7 @@ public class ChangeScene_Start : MonoBehaviour
     public void OnMouseClick()
     {
         Application.LoadLevel("Escenario");
+		Puntuacion.score = 0;
     }
 
     // Update is called once per frame

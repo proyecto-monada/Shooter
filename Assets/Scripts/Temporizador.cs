@@ -17,7 +17,10 @@ public class Temporizador : MonoBehaviour
 		}
 		  
 	
-		if(tiempo <= 0) Application.LoadLevel("Table");
+		if(tiempo <= 0) {
+			tiempo = 60f;
+			Application.LoadLevel("Table");
+		}
 	}
 	
 }
