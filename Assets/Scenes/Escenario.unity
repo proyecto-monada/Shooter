@@ -1788,6 +1788,11 @@ PrefabInstance:
       propertyPath: mouseSensitivity
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 114352007083497230, guid: c24fed9fa91f7634fbc8e5e12405008e,
+        type: 3}
+      propertyPath: m_Enabled
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 224550047390012680, guid: c24fed9fa91f7634fbc8e5e12405008e,
         type: 3}
       propertyPath: m_LocalPosition.z
@@ -1797,7 +1802,8 @@ PrefabInstance:
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114352007083497230, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: c24fed9fa91f7634fbc8e5e12405008e, type: 3}
 --- !u!1 &735065956 stripped
 GameObject:
@@ -1819,6 +1825,37 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Pospistola: {x: 0, y: 0, z: 0}
   giroZ: 0
+--- !u!114 &735065958
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 735065956}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4753be9120d3afb4098c0465f8a6e078, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  arms: {fileID: 934718163}
+  armPosition: {x: 0, y: 0, z: 0}
+  walkingSound: {fileID: 8300000, guid: 6597a368cd74a924eaedb0171d5b28d3, type: 3}
+  runningSound: {fileID: 8300000, guid: 0c58744c3b6fdd844b8348066c3f703e, type: 3}
+  walkingSpeed: 5
+  runningSpeed: 9
+  movementSmoothness: 0.125
+  jumpForce: 35
+  mouseSensitivity: 2
+  rotationSmoothness: 0.05
+  minVerticalAngle: -90
+  maxVerticalAngle: 90
+  input:
+    rotateX: Mouse X
+    rotateY: Mouse Y
+    move: Horizontal
+    strafe: Vertical
+    run: Fire3
+    jump: Jump
 --- !u!1 &883970637
 GameObject:
   m_ObjectHideFlags: 0
@@ -1979,6 +2016,12 @@ Light:
   m_UseColorTemperature: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
+--- !u!4 &934718163 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 4225693047334556, guid: c24fed9fa91f7634fbc8e5e12405008e,
+    type: 3}
+  m_PrefabInstance: {fileID: 735065955}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &995152481
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -3700,7 +3743,7 @@ GameObject:
   - component: {fileID: 1920025488}
   - component: {fileID: 1920025487}
   m_Layer: 0
-  m_Name: comArdu
+  m_Name: Com
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

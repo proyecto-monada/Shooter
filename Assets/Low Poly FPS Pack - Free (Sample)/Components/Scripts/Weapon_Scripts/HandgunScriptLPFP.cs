@@ -208,7 +208,15 @@ public float damage=50;/////////////////////////////////////////////////////////
 
 		//Aiming
 		//Toggle camera FOV when right click is held down
-		if(Input.GetButton("Fire2") && !isReloading && !isRunning && !isInspecting) 
+
+		/***************MONCHEFICADO***************/
+
+		//if(Input.GetButton("Fire2") && !isReloading && !isRunning && !isInspecting) 
+		ComArduino comArdu = GameObject.Find("Com").GetComponent<ComArduino>();
+		//if((comArdu.trigg==1) && !isReloading && !isRunning && !isInspecting) 
+		if((1==1) && !isReloading && !isRunning && !isInspecting)
+		/***************MONCHEFICADO***************/
+		
 		{
 			
 			gunCamera.fieldOfView = Mathf.Lerp (gunCamera.fieldOfView,
@@ -330,7 +338,12 @@ public float damage=50;/////////////////////////////////////////////////////////
 		}
 
 		//Shooting 
-		if (Input.GetMouseButtonDown (0) && !outOfAmmo && !isReloading && !isInspecting && !isRunning) 
+		/******************MONCHEFICADO**************************/
+
+		//if (Input.GetMouseButtonDown (0) && !outOfAmmo && !isReloading && !isInspecting && !isRunning)
+		if ((comArdu.trigg==1) && !outOfAmmo && !isReloading && !isInspecting && !isRunning)
+			
+		/******************MONCHEFICADO**************************/
 		{
 			anim.Play ("Fire", 0, 0f);
 	
@@ -343,7 +356,12 @@ public float damage=50;/////////////////////////////////////////////////////////
 
 RaycastHit hit;
 
-Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+/************************MONCHEFICADO**************************/
+
+//Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+			Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width * 0.5f,Screen.height * 0.5f,0f));
+/************************MONCHEFICADO**************************/
+
 if (Physics.Raycast(ray, out hit, 1000.0f))
         {
 		if(hit.transform.CompareTag("Enemy")){
