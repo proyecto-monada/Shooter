@@ -7,19 +7,25 @@ public class MovimientoPistola : MonoBehaviour
 	public Vector3 Pospistola;
 	public float giroZ;
 
-	private Vector3 imu_origin;
+	public Vector3 imu_origin;
+	public int i;
 
 
 
 	void Start()
 	{
 		ComArduino comArdu = GameObject.Find("Com").GetComponent<ComArduino>();
+		//PARA CALIBRAR LEER EL TRIGGER
+			
 		imu_origin.x = comArdu.imu_x;
 		imu_origin.y = comArdu.imu_x;
 		imu_origin.z = comArdu.imu_y;
+		
 
 
 	}
+
+
 
 	// Update is called once per frame
 	void Update()
@@ -43,8 +49,11 @@ public class MovimientoPistola : MonoBehaviour
 
 		//DOS EJES LOCAL Y REFERENCIA INICIAL
 		giroZ = comArdu.imu_x*(1);
-		//transform.localEulerAngles = new Vector3(comArdu.imu_y - imu_origin.y /*- 90*/, 0f, giroZ-imu_origin.z);
-		transform.localEulerAngles = new Vector3(comArdu.imu_y - imu_origin.y +15/*- 90*/, giroZ-imu_origin.z+180,0f);
+
+		transform.localEulerAngles = new Vector3(comArdu.imu_y - imu_origin.y+15 /*- 90*/, giroZ-imu_origin.z+180.0f,0f);
+
+		//CALIBRANDO
+		//transform.localEulerAngles = new Vector3(comArdu.imu_y - imu_origin.y /*- 90*/, comArdu.imu_x-imu_origin.x,0f-180);
 		Pospistola = transform.eulerAngles;
 
 	}
