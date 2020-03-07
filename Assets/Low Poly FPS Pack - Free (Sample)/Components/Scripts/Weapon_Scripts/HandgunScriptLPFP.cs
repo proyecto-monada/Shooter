@@ -359,7 +359,7 @@ RaycastHit hit;
 /************************MONCHEFICADO**************************/
 
 //Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-			Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width * 0.5f,Screen.height * 0.5f,0f));
+Ray ray = Camera.main.ScreenPointToRay(new Vector3(Screen.width * 0.5f,Screen.height * 0.5f,0f));
 /************************MONCHEFICADO**************************/
 
 if (Physics.Raycast(ray, out hit, 1000.0f))
